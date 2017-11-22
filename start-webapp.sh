@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+
+export JBOSS_HOME=~/Servers/wildfly-10.1.0.Final
+PROJECT_HOME=~/workspace/week3-demo1
+
+rm -rf $PROJECT_HOME/target
+rm -rf $JBOSS_HOME/standalone/tmp
+rm -rf $JBOSS_HOME/standalone/data
+rm -rf $JBOSS_HOME/standalone/deployments/*.failed
+rm -rf $JBOSS_HOME/standalone/deployments/*.war
+rm -rf $JBOSS_HOME/standalone/deployments/*.dodeploy
+
+cd $PROJECT_HOME
+mvn clean install
+ln -s $PROJECT_HOME/target/week3-demo1.war $JBOSS_HOME/standalone/deployments/week3-demo1.war
+
+$JBOSS_HOME/bin/standalone.sh -Ddevelopment.path=$PROJECT_HOME

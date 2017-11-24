@@ -1,0 +1,5 @@
+CREATE TABLE public.user (
+  id      SERIAL    NOT NULL UNIQUE PRIMARY KEY,
+  name    VARCHAR NOT NULL,
+  created TIMESTAMP NOT NULL
+);

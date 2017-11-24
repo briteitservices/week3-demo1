@@ -4,7 +4,7 @@
         http://java.sun.com/xml/ns/persistence
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
     <persistence-unit name="main">
-        <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+        <jta-data-source>java:jboss/datasources/SampleDS</jta-data-source>
         <validation-mode>AUTO</validation-mode>
         <properties>
             <property name="hibernate.generate_statistics" value="false"/>
@@ -18,8 +18,8 @@
             <property name="hibernate.default_batch_fetch_size" value="8"/>
             <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
 
-            <property name="jboss.entity.manager.jndi.name" value="java:/ExampleManager"/>
-            <property name="jboss.entity.manager.factory.jndi.name" value="java:/ExampleEntityManagerFactory"/>
+            <property name="jboss.entity.manager.jndi.name" value="java:/SampleEntityManager"/>
+            <property name="jboss.entity.manager.factory.jndi.name" value="java:/SampleEntityManagerFactory"/>
         </properties>
     </persistence-unit>
 </persistence>

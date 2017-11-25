@@ -1,14 +1,13 @@
 package com.briteitservices.week3;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.security.PermitAll;
+import javax.annotation.PreDestroy;
+import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.ejb.Stateless;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@Stateless
-@PermitAll
+@Singleton
 @Startup
 public class EJBSample {
 
@@ -17,5 +16,10 @@ public class EJBSample {
     @PostConstruct
     public void run() {
         log.log(Level.WARNING, "Hello EJB!");
+    }
+
+    @PreDestroy
+    public void doSomething() {
+
     }
 }

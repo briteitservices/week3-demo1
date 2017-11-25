@@ -14,4 +14,4 @@ cd $PROJECT_HOME
 mvn clean install
 ln -s $PROJECT_HOME/target/week3-demo1.war $JBOSS_HOME/standalone/deployments/week3-demo1.war
 
-$JBOSS_HOME/bin/standalone.sh -Ddevelopment.path=$PROJECT_HOME
+$JBOSS_HOME/bin/standalone.sh --debug 8787 -Ddevelopment.path=$PROJECT_HOME

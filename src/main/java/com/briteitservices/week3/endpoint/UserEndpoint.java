@@ -22,7 +22,6 @@ public class UserEndpoint {
     @Inject
     private UserRepository userRepository;
 
-
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public void save(@QueryParam("name") String name) {

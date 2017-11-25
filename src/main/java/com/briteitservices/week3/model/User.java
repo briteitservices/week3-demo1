@@ -48,4 +48,9 @@ public class User {
     public void setCreated(Date created) {
         this.created = created;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

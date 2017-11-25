@@ -22,14 +22,13 @@ public class UserEndpoint {
     @Inject
     private UserRepository userRepository;
 
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String save(@QueryParam("name") String name) {
+    public void save(@QueryParam("name") String name) {
         User user = new User();
         user.setName(name);
         user.setCreated(new Date());
         userRepository.save(user);
-
-        return "USER ID: " + user.getId();
     }
 }

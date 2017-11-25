@@ -7,7 +7,6 @@ import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,17 +22,14 @@ public class EntityManagerProvider {
     @Produces
     @Default
     @RequestScoped
-    public EntityManager create()
-    {
+    public EntityManager create() {
         log.log(Level.INFO, "EM created");
         return this.entityManagerFactory.createEntityManager();
     }
 
-    public void dispose(@Disposes @Default EntityManager entityManager)
-    {
+    public void dispose(@Disposes @Default EntityManager entityManager) {
         log.log(Level.INFO, "EM disposed");
-        if (entityManager.isOpen())
-        {
+        if (entityManager.isOpen()) {
             entityManager.close();
         }
     }

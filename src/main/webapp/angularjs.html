@@ -9,8 +9,14 @@
 <body ng-controller="myController">
 <h1>Hello AngularJS!</h1>
 
-<p>1 + 2 = {{1+2}}</p>
-<p>{{text}}</p>
+<h2>
+    <div ng-repeat="user in users">
+        {{user.id}}:{{user.name}}
+    </div>
+</h2>
+
+<button class="btn btn-primary" ng-click="update()">Change</button>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 <script src="app.js"></script>
